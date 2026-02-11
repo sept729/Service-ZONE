@@ -1,0 +1,186 @@
+/* استدعاء خط Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
+/* إعدادات تصفير الهوامش */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #050505;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: white;
+}
+
+/* تأثير الخلفية الديناميكية */
+.bg-animate {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, #111 0%, #000 100%);
+    z-index: -1;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    bottom: -100px;
+    animation: move 20s infinite linear;
+}
+
+@keyframes move {
+    from { transform: translateY(0) rotate(0deg); opacity: 1; }
+    to { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
+
+/* الحاوية الرئيسية (Glassmorphism) */
+.container {
+    width: 90%;
+    max-width: 420px;
+    padding: 35px 30px;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 35px;
+    text-align: center;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+}
+
+/* تصميم منطقة اللوجو والنبض */
+.logo-area {
+    position: relative;
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; /* لجعل الصورة دائرية */
+    object-fit: cover; /* لضمان عدم تشوه الصورة */
+    border: 2px solid rgba(0, 210, 255, 0.3);
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 210, 255, 0.6); }
+    70% { box-shadow: 0 0 0 15px rgba(0, 210, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 210, 255, 0); }
+}
+
+h1 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.tagline {
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 30px;
+}
+
+/* قائمة الروابط */
+.links-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.link-item {
+    display: flex;
+    align-items: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    color: white;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.link-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px) scale(1.02);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.link-item i:first-child {
+    font-size: 22px;
+    width: 40px;
+}
+
+.link-item span {
+    flex-grow: 1;
+    text-align: left;
+    font-weight: 500;
+}
+
+.arrow-icon {
+    font-size: 12px;
+    opacity: 0.3;
+}
+
+/* ألوان الهوية البصرية عند الوقوف بالماوس */
+.whatsapp:hover { box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4); color: #25D366; }
+.facebook:hover { box-shadow: 0 5px 20px rgba(24, 119, 242, 0.4); color: #1877F2; }
+.instagram:hover { box-shadow: 0 5px 20px rgba(228, 64, 95, 0.4); color: #E4405F; }
+.tiktok:hover { box-shadow: 0 5px 20px rgba(255, 255, 255, 0.2); color: #00f2ea; }
+
+/* فوتر شركة SEPT المطور */
+footer {
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+footer p {
+    font-size: 11px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.dev-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.sept-text {
+    font-size: 9px;
+    color: #444;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sept-signature {
+    color: #aaa;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 4px;
+    transition: 0.4s;
+    font-size: 14px;
+}
+
+.sept-signature:hover {
+    color: #00d2ff;
+    text-shadow: 0 0 15px rgba(0, 210, 255, 0.6);
+    transform: translateY(-2px);
+}
